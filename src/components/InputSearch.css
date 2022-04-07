@@ -1,0 +1,13 @@
+.search-block p {
+    font-size: 36px;
+    font-family: 'Roboto', sans-serif;
+    margin: 100px auto 60px;
+}
+
+.search-input {
+    width: 686px;
+}
+
+.search-input button {
+    width: 145px;
+}
