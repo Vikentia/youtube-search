@@ -14,6 +14,7 @@ import './InputSearch.css';
 function InputSearch() {
     const { Search } = Input;
     const [resultsVideos, setResultsVideos] = useState([]);
+    const [valueRequest, setValueRequest] = useState('');
 
     const KEY = 'AIzaSyD3NtVEz2D0_f_1bcilE2YmKaQYO0pUEdk';
 
@@ -25,6 +26,7 @@ function InputSearch() {
     />;
 
     const onSearch = async (value) => {
+        setValueRequest('');
         console.log(value);
         const response = await axios.get('https://www.googleapis.com/youtube/v3/search',
             {
@@ -37,6 +39,7 @@ function InputSearch() {
                     key: KEY,
                 }
             });
+        setValueRequest(value);
         setResultsVideos(response.data.items);
 
     };
@@ -56,7 +59,7 @@ function InputSearch() {
                 />
             </Space>
 
-            {resultsVideos.length > 0 && <SearchResults resultsVideos={resultsVideos} />}
+            {resultsVideos.length > 0 && <SearchResults resultsVideos={resultsVideos} valueRequest={valueRequest} />}
 
         </div>
     )

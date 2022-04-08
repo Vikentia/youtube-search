@@ -1,20 +1,24 @@
 import React from 'react'
 
-function SearchResults({ resultsVideos }) {
+function SearchResults({ resultsVideos, valueRequest }) {
     return (
         <div>
-            <p>SearchResults</p>
-            {console.log(resultsVideos)}
             {
-                resultsVideos.map(item => {
-                    let link = `https://www.youtube.com/watch?v=id${item.id.videoId}`;
-                    return <iframe width="420" src={link} > </iframe>
+                valueRequest ? <p> Результат по запросу: {valueRequest}</p> : <p> Некорректный запрос </p>
+            }
+
+            {
+                valueRequest
+                && resultsVideos.map(item => {
+                    let link = `https://www.youtube.com/embed/${item.id.videoId}`;
+                    return <iframe width="360" height="315" src={link} > </iframe>
                 })
             }
         </div >
     );
 }
 
-export default SearchResults
+export default SearchResults;
 
-//video.id.videoId
+
+<iframe width="360" height="315" src="https://www.youtube.com/embed/DuudSp4sHmg" ></iframe>
