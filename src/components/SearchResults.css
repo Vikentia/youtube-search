@@ -1,0 +1,39 @@
+.wrap-video {
+    display: grid;
+    width: 100%;
+}
+
+.video-item {
+    display: block;
+    width: 245px;
+    height: 220px;
+    background: yellow;
+}
+
+.video-item .video {
+    width: 245px;
+    height: 138px;
+}
+
+.video-item .video-title,
+.video-item .video-views {
+    background: orange;
+    height: 32px;
+    line-height: 16px;
+    overflow: hidden;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0;
+    justify-content: left;
+}
+
+.video-item .video-title p {
+    margin: 0;
+    overflow: hidden;
+}
+
+.video-item .video-views {
+    background: greenyellow;
+    color: rgba(23, 23, 25, 0.3);
+}

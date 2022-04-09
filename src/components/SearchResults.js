@@ -1,19 +1,29 @@
 import React from 'react'
 
+import './SearchResults.css';
+
 function SearchResults({ resultsVideos, valueRequest }) {
     return (
-        <div>
+        <div className='wrap'>
             {
-                valueRequest ? <p> Результат по запросу: {valueRequest}</p> : <p> Некорректный запрос </p>
+                valueRequest ? <p> Видео по запросу: &#171;{valueRequest}&#187;</p> : null
             }
-
-            {
-                valueRequest
-                && resultsVideos.map(item => {
-                    let link = `https://www.youtube.com/embed/${item.id.videoId}`;
-                    return <iframe width="360" height="315" src={link} > </iframe>
-                })
-            }
+            <div className='wrap-video'>
+                {
+                    valueRequest
+                    && resultsVideos.map(item => {
+                        let link = `https://www.youtube.com/embed/${item.id.videoId}`;
+                        console.log(item);
+                        return (
+                            <div className={'video-item'}>
+                                <iframe className={'video'} src={link} > </iframe>
+                                <p className={'video-title'}>{item.snippet.title}</p>
+                                <p className={'video-views'}>wer rjkbxtcndj ghjkjh hre erj hejr er rhk jjrkh ejrk </p>
+                            </div>
+                        )
+                    })
+                }
+            </div>
         </div >
     );
 }
@@ -21,4 +31,3 @@ function SearchResults({ resultsVideos, valueRequest }) {
 export default SearchResults;
 
 
-<iframe width="360" height="315" src="https://www.youtube.com/embed/DuudSp4sHmg" ></iframe>

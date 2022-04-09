@@ -6,7 +6,9 @@ import { AudioOutlined } from '@ant-design/icons';
 
 import SearchResults from './SearchResults';
 
+
 import './InputSearch.css';
+import './SearchResults.css';
 
 
 
@@ -46,7 +48,7 @@ function InputSearch() {
 
 
     return (
-        <div className='search-block'>
+        <div className={resultsVideos.length ? 'search-result' : 'search-block'}>
 
             <p>Поиск видео</p>
             <Space direction="vertical" className='search-input'>
@@ -58,8 +60,13 @@ function InputSearch() {
                     onSearch={onSearch}
                 />
             </Space>
+            <div className='result-block'>
+                {
+                    resultsVideos.length > 0
+                    && < SearchResults resultsVideos={resultsVideos} valueRequest={valueRequest} />
+                }
+            </div>
 
-            {resultsVideos.length > 0 && <SearchResults resultsVideos={resultsVideos} valueRequest={valueRequest} />}
 
         </div>
     )

@@ -4,10 +4,41 @@
     margin: 100px auto 60px;
 }
 
-.search-input {
+.search-block .search-input {
     width: 686px;
 }
 
-.search-input button {
+.search-block .search-input button {
     width: 145px;
+}
+
+.search-result {
+    width: 75%;
+    margin: 0 auto;
+    background-color: pink;
+}
+
+.result-block {
+    margin: 0 auto;
+}
+
+.search-result p {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin: 20px 0px 12px;
+    display: flex;
+}
+
+.search-result .search-input {
+    width: 100%;
+}
+
+.search-result .search-input button {
+    width: 145px;
+}
+
+.result-block p {
+    margin: 20px 0px 12px;
+    font-family: 'Roboto';
+    font-size: 16px;
 }
