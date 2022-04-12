@@ -37,3 +37,27 @@
     background: greenyellow;
     color: rgba(23, 23, 25, 0.3);
 }
+
+.filter-panel {
+    display: flex;
+    justify-content: space-between;
+}
+
+.video-sort {
+    margin: 12px 0 12px;
+}
+
+.sort-list,
+.sort-grid {
+    padding-left: 20px;
+
+}
+
+.video-sort button {
+    background-color: white;
+    border: none;
+}
+
+.sort-opacity {
+    opacity: 50%;
+}
