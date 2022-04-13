@@ -9,6 +9,8 @@ function SearchResults({ resultsVideos, valueRequest }) {
 
     const [sort, setSort] = useState('list');
 
+    console.log(sort);
+
 
     return (
 
@@ -34,13 +36,20 @@ function SearchResults({ resultsVideos, valueRequest }) {
                     valueRequest
                     && resultsVideos.map(item => {
                         let link = `https://www.youtube.com/embed/${item.id.videoId}`;
-                        // console.log(item);
+                        console.log(item);
                         return (
-                            <div className={'video-item'}>
-                                <iframe className={'video'} src={link} > </iframe>
-                                <p className={'video-title'}>{item.snippet.title}</p>
-                                <p className={'video-views'}>wer rjkbxtcndj ghjkjh hre erj hejr er rhk jjrkh ejrk </p>
+                            <div className={`video-wrap-${sort}`}>
+                                <div className={`video-item-${sort}`}>
+                                    <iframe className={`video-${sort}`} src={link} > </iframe>
+                                    <div className='block'>
+                                        <p className={`video-title-${sort}`}>{item.snippet.title}</p>
+                                        <p className={`video-views-${sort}`}>{item.snippet.channelTitle} </p>
+
+                                    </div>
+                                </div>
                             </div>
+
+
                         )
                     })
                 }

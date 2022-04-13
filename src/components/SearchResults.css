@@ -1,50 +1,20 @@
-.wrap-video {
-    display: grid;
-    width: 100%;
+.wrap {
+    /* background-color: rgb(241, 168, 168); */
+    padding-top: 15px;
 }
 
-.video-item {
-    display: block;
-    width: 245px;
-    height: 220px;
-    background: yellow;
-}
-
-.video-item .video {
-    width: 245px;
-    height: 138px;
-}
-
-.video-item .video-title,
-.video-item .video-views {
-    background: orange;
-    height: 32px;
-    line-height: 16px;
-    overflow: hidden;
-    font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 14px;
-    margin: 0;
-    justify-content: left;
-}
-
-.video-item .video-title p {
-    margin: 0;
-    overflow: hidden;
-}
-
-.video-item .video-views {
-    background: greenyellow;
-    color: rgba(23, 23, 25, 0.3);
+.video-sort {
+    margin: 12px 0 12px;
 }
 
 .filter-panel {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
 }
 
-.video-sort {
-    margin: 12px 0 12px;
+.filter-panel p {
+    width: 650px;
 }
 
 .sort-list,
@@ -60,4 +30,92 @@
 
 .sort-opacity {
     opacity: 50%;
+}
+
+.wrap-video {
+    /* display: grid; */
+    width: 100%;
+}
+
+.video-item-grid {
+    /* display: block; */
+    /* width: 245px; */
+    /* height: 220px; */
+    /* background: yellow; */
+}
+
+.video-item-grid .video-grid {
+    /* width: 245px; */
+    /* height: 138px; */
+}
+
+.video-item-grid .video--grid,
+.video-item-grid .video-views-grid {
+    background: orange;
+    /* height: 32px; */
+    /* line-height: 16px; */
+    /* overflow: hidden; */
+    /* font-family: 'Roboto'; */
+    /* font-weight: 500; */
+    /* font-size: 14px; */
+    /* margin: 0; */
+    /* justify-content: left; */
+}
+
+.video-item-grid .video-title-grid p {
+    /* margin: 0; */
+    /* overflow: hidden; */
+}
+
+.video-item-grid .video-views-grid {
+    background: greenyellow;
+    /* color: rgba(23, 23, 25, 0.3); */
+}
+
+.video-wrap-list {
+    /* background-color: aqua; */
+    width: 687px;
+}
+
+.video-list {
+    height: inherit;
+    width: 200px;
+    margin-right: 20px;
+
+}
+
+.video-item-list {
+    /* border: 1px solid red; */
+    height: 90px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.video-item-list .block {
+    display: block;
+}
+
+.video-title-list,
+.video-views-list {
+    height: 40px;
+    width: 450px;
+    /* background-color: aliceblue; */
+}
+
+.video-title-list,
+.video-views-list {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-family: 'Roboto';
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.video-views-list {
+    color: grey;
 }

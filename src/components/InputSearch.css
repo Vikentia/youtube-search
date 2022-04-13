@@ -22,10 +22,14 @@
     margin: 0 auto;
 }
 
+.search-title {
+    margin: 20px 0px 12px;
+
+}
+
 .search-result p {
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
-    margin: 20px 0px 12px;
     display: flex;
 }
 
@@ -38,7 +42,6 @@
 }
 
 .result-block p {
-    margin: 20px 0px 12px;
     font-family: 'Roboto';
     font-size: 16px;
 }

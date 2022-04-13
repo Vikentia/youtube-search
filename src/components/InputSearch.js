@@ -50,7 +50,7 @@ function InputSearch() {
     return (
         <div className={resultsVideos.length ? 'search-result' : 'search-block'}>
 
-            <p>Поиск видео</p>
+            <p className='search-title'>Поиск видео</p>
             <Space direction="vertical" className='search-input'>
                 <Search
                     placeholder="Что хотите посмотреть?"
