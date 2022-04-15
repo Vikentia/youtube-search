@@ -31,7 +31,7 @@ function SearchResults({ resultsVideos, valueRequest }) {
                     : null
 
             }
-            <div className='wrap-video'>
+            <div className={`wrap-video-${sort}`}>
                 {
                     valueRequest
                     && resultsVideos.map(item => {
