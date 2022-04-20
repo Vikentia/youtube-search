@@ -12,7 +12,7 @@ function Main({ logIn, setLogIn }) {
 
             <Header logIn={logIn} setLogIn={setLogIn} />
             <Routes>
-                <Route path='/' element={<InputSearch />} />
+                <Route path='*' element={<InputSearch />} />
                 <Route path='/favorites' element={<Favorites />} />
 
             </Routes>

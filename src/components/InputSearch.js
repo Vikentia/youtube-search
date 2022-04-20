@@ -2,7 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios';
 import { Input, Space } from 'antd';
-import { AudioOutlined } from '@ant-design/icons';
+import { AudioOutlined, HeartOutlined } from '@ant-design/icons';
+import { HeartTwoTone, CheckCircleTwoTone } from '@ant-design/icons';
+
 
 import SearchResults from './SearchResults';
 
@@ -51,6 +53,7 @@ function InputSearch() {
         <div className={resultsVideos.length ? 'search-result' : 'search-block'}>
 
             <p className='search-title'>Поиск видео</p>
+
             <Space direction="vertical" className='search-input'>
                 <Search
                     placeholder="Что хотите посмотреть?"
@@ -58,8 +61,15 @@ function InputSearch() {
                     enterButton="Найти"
                     size="large"
                     onSearch={onSearch}
+                    suffix={resultsVideos.length
+                        ? <button className='search-heart' onClick={() => { }}>
+                            <HeartTwoTone twoToneColor="#35a2ec" />
+                        </button>
+                        : null
+                    }
                 />
             </Space>
+
             <div className='result-block'>
                 {
                     resultsVideos.length > 0

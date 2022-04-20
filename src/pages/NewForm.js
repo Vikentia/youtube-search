@@ -102,7 +102,7 @@ function NewForm({ logIn, setLogIn }) {
                             <ErrorMessage component="div" className="error afterVisible" name="password" />
                         </div>
 
-                        <div>   <button className="form-btn" type="submit">Войти</button>      </div>
+                        <div>   <button className="form-btn" type="submit" >Войти</button>      </div>
 
                     </Form>
                 </Formik>

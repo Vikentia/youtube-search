@@ -12,6 +12,7 @@
     width: 145px;
 }
 
+
 .search-result {
     width: 75%;
     margin: 0 auto;
@@ -39,6 +40,15 @@
 
 .search-result .search-input button {
     width: 145px;
+}
+
+.search-result .search-input .search-heart {
+    width: 25px;
+}
+
+.search-heart {
+    border: none;
+    background-color: white;
 }
 
 .result-block p {
