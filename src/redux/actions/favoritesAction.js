@@ -1,8 +1,16 @@
 import { ADD_VALUE } from "./actionTypes";
 
-export const addValue = data => {
-    return {
-        type: ADD_VALUE,
-        payload: [...state, data]
-    };
-};
+
+function favoritesAction(data) {
+    return (
+        {
+            type: ADD_VALUE,
+            payload: {
+                'request': data,
+                'sort': 12,
+            },
+        }
+    )
+}
+
+export default favoritesAction;

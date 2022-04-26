@@ -9,7 +9,7 @@ function SearchResults({ resultsVideos, valueRequest }) {
 
     const [sort, setSort] = useState('list');
 
-    console.log(sort);
+    // console.log(sort); 
 
 
     return (
@@ -36,7 +36,7 @@ function SearchResults({ resultsVideos, valueRequest }) {
                     valueRequest
                     && resultsVideos.map(item => {
                         let link = `https://www.youtube.com/embed/${item.id.videoId}`;
-                        console.log(item);
+                        // console.log(item);
                         return (
                             <div className={`video-wrap-${sort}`}>
                                 <div className={`video-item-${sort}`}>
