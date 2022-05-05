@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
 import { Form, Input, Button, Select } from 'antd';
 import { Slider } from 'antd';
+
+import favoritesAction from '../redux/actions/favoritesAction';
 
 import './AddFavorites.css';
 
@@ -9,6 +12,8 @@ function AddFavorites({ valueRequest, setVisibleFavorites, visibleFavorites }) {
 
     const { register, handleSubmit, resetFields } = useForm();
     const { Option } = Select;
+    const dispatch = useDispatch();
+    const array = useSelector(state => state.favorites);
 
 
     const onReset = () => {
@@ -16,9 +21,18 @@ function AddFavorites({ valueRequest, setVisibleFavorites, visibleFavorites }) {
         setVisibleFavorites(false);
     };
 
-    const onFinish = (e) => {
-        console.log(e)
-        // setVisibleFavorites(false);
+    const onFinish = (dataForm) => {
+        let user = localStorage.getItem('login');
+        let id = array.length + 1;
+        const data = { user, id, ...dataForm };
+        console.log(data);
+        console.log('---');
+        // if (!array.filter(obj => obj.request == dataForm.request).length) {
+        dispatch(favoritesAction(data))
+        // } else {
+        //     console.log(array, valueRequest)
+        // }
+        setVisibleFavorites(false);
 
     }
 
@@ -44,8 +58,8 @@ function AddFavorites({ valueRequest, setVisibleFavorites, visibleFavorites }) {
 
                         </Select>
                     </Form.Item>
-                    <Form.Item label='Максимальное количество' name='maxLenght'>
-                        <Slider initialValue={12}
+                    <Form.Item label='Максимальное количество' initialValue={12} name='maxVideos'>
+                        <Slider
                             min={12}
                             max={50}
                         />

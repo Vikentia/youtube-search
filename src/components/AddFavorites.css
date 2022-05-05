@@ -1,6 +1,7 @@
 .modal {
-    height: 60vh;
-    width: 74vw;
+    height: 580px;
+    width: 510px;
+
     /* background-color: rgba(143, 165, 237, 0.4); */
     background-color: rgba(26, 144, 255, 0.5);
     position: fixed;
@@ -17,9 +18,11 @@
     padding: 20px;
     border-radius: 12px;
     background-color: white;
-    width: 50vw;
+    /* width: 50vw; */
     transform: scale(0.5);
     transition: 0.4s all;
+    height: 580px;
+    width: 510px;
 }
 
 .modal.active {

@@ -6,8 +6,12 @@ function favoritesAction(data) {
         {
             type: ADD_VALUE,
             payload: {
-                'request': data,
-                'sort': 12,
+                'id': data.id,
+                'login': data.user,
+                'request': data.request,
+                'title': data.title,
+                'sort': data.sort,
+                'maxVideos': data.maxVideos,
             },
         }
     )
