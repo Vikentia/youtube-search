@@ -1,11 +1,11 @@
-import { ADD_VALUE } from '../actions/actionTypes';
+import { DELETE_VALUE } from '../actions/actionTypes';
 
 const initialValue = [];
 
 function favoritesReducer(state = initialValue, action) {
     switch (action.type) {
-        case ADD_VALUE:
-            return [...state, action.payload];
+        case DELETE_VALUE:
+            return [...state.filter(item => item.id !== ), action.payload];
 
 
         default:

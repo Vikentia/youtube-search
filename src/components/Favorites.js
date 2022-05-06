@@ -1,13 +1,21 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { Button } from 'antd';
 import './Favorites.css';
+import './InputSearch.css';
 
-function Favorites() {
+function Favorites({ onSearch }) {
 
     const favorites = useSelector(state => state.favorites);
     let user = localStorage.getItem('login');
+    let navigate = useNavigate();
+    const dispatch = useDispatch();
 
+    const onSearchFromFavorite = (value) => {
+        navigate('/');
+        onSearch(value);
+    }
 
     return (
         <div className='wrap-favorites'>
@@ -19,9 +27,21 @@ function Favorites() {
                             .filter(item => user == item.login)
                             .map(item => {
                                 return (
-                                    <button key={item.id} className={'favorite-item'} onClick={() => console.log(item.request, item.title)}>
-                                        {item.title}
-                                    </button>
+                                    <div key={item.id} className='favorites-item'>
+                                        <Button
+                                            type="text"
+                                            className={'favorite-btn'}
+                                            onClick={() => onSearchFromFavorite(item.request)}
+                                        >
+                                            {item.title}
+                                        </Button>
+                                        <Button type="link" onClick={() => console.log('изменить')} >
+                                            Изменить
+                                        </Button>
+                                        {/* <Button type="text" danger onClick={() => dispatch(deleteFavoritesAction(item))} >
+                                            Удалить
+                                        </Button> */}
+                                    </div>
                                 )
                             })
                         : <p>Пусто - выросла капуста </p>

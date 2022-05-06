@@ -1,14 +1,22 @@
 .favorites-block {
     width: 60%;
-    background-color: red;
     text-align: left;
-
 }
 
-.favorite-item {
+.favorite-btn {
+    background-color: rgb(238, 172, 172);
+    width: 100%;
+    text-align: start;
+}
+
+.favorite-btn {
     border: none;
     background-color: white;
     display: block;
+}
+
+.favorites-item {
+    display: flex;
 }
 
 .wrap-favorites {

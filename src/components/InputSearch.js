@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios';
 import { Input, Space } from 'antd';
-import { HeartTwoTone, CheckCircleTwoTone } from '@ant-design/icons';
+import { HeartTwoTone } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import favoritesAction from '../redux/actions/favoritesAction';
 
@@ -14,44 +14,36 @@ import './SearchResults.css';
 
 
 
-function InputSearch() {
+function InputSearch({ onSearch, valueRequest, resultsVideos }) {
     const { Search } = Input;
-    const [resultsVideos, setResultsVideos] = useState([]);
-    const [valueRequest, setValueRequest] = useState('');
+    // const [resultsVideos, setResultsVideos] = useState([]);
+    // const [valueRequest, setValueRequest] = useState('');
     const [visibleFavorites, setVisibleFavorites] = useState(false);
 
-    const KEY = 'AIzaSyD3NtVEz2D0_f_1bcilE2YmKaQYO0pUEdk';
+    // const KEY = 'AIzaSyD3NtVEz2D0_f_1bcilE2YmKaQYO0pUEdk';
 
     const dispatch = useDispatch();
     const array = useSelector(state => state.favorites);
-    console.log(array)
+    // console.log(array)
 
-    const onSearch = async (value) => {
-        setValueRequest('');
-        // console.log(value);
-        const response = await axios.get('https://www.googleapis.com/youtube/v3/search',
-            {
-                params: {
-                    part: "snippet",
-                    type: "video",
-                    maxResults: 12,
-                    order: "relevance",
-                    q: value,
-                    key: KEY,
-                }
-            });
-        setValueRequest(value);
-        setResultsVideos(response.data.items);
+    // const onSearch = async (value) => {
+    //     setValueRequest('');
+    //     // console.log(value);
+    //     const response = await axios.get('https://www.googleapis.com/youtube/v3/search',
+    //         {
+    //             params: {
+    //                 part: "snippet",
+    //                 type: "video",
+    //                 maxResults: 12,
+    //                 order: "relevance",
+    //                 q: value,
+    //                 key: KEY,
+    //             }
+    //         });
+    //     setValueRequest(value);
+    //     setResultsVideos(response.data.items);
 
-    };
-
-    const addToFavorites = value => {
-        // if (!array.filter(obj => obj.request == value).length) {
-        //     dispatch(favoritesAction(value))
-        // } else {
-        //     console.log(array, valueRequest)
-        // }
-    }
+    // };
 
     return (
         <div>
