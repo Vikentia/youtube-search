@@ -2,12 +2,15 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'antd';
+
 import './Favorites.css';
 import './InputSearch.css';
+import deleteFavoritesAction from '../redux/actions/deleteFavoritesAction';
 
 function Favorites({ onSearch }) {
 
     const favorites = useSelector(state => state.favorites);
+    console.log(favorites);
     let user = localStorage.getItem('login');
     let navigate = useNavigate();
     const dispatch = useDispatch();
@@ -38,9 +41,10 @@ function Favorites({ onSearch }) {
                                         <Button type="link" onClick={() => console.log('изменить')} >
                                             Изменить
                                         </Button>
-                                        {/* <Button type="text" danger onClick={() => dispatch(deleteFavoritesAction(item))} >
+                                        <Button type="text" danger onClick={() => dispatch(deleteFavoritesAction(item.id))} >
+                                            {/* <Button type="text" danger onClick={() => console.log(item.id)} > */}
                                             Удалить
-                                        </Button> */}
+                                        </Button>
                                     </div>
                                 )
                             })
