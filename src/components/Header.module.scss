@@ -1,0 +1,50 @@
+$color_blue: #1390E5;
+
+.header {
+    height: 80px;
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #E5E5E5;
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+
+    &__wrap {
+        height: inherit;
+        align-self: center;
+        display: flex;
+
+        & img {
+            height: 48px;
+            position: relative;
+            top: 15px;
+        }
+
+        & .empty {
+            width: 30px;
+        }
+
+        & .wrap__link {
+            a {
+                height: inherit;
+                vertical-align: middle;
+                text-decoration: none;
+                color: $color_blue;
+                display: table;
+                line-height: 80px;
+
+                & .active {
+                    border-bottom: 2px solid $color_blue;
+                    background-color: red;
+                }
+            }
+        }
+    }
+
+    & .btn {
+        color: $color_blue;
+        font-size: 18px;
+        background-color: white;
+        height: 100%;
+        border: none;
+    }
+}

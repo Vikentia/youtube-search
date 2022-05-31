@@ -7,40 +7,31 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { favoritesAction } from '../redux/actions/favoritesAction';
 
-import styles from './AddFavorites.module.scss';
+import './AddFavorites.css';
 
-function AddFavorites({ valueRequest, setVisibleFavorites, visibleFavorites, isDisabled }) {
+function ChangeFavorites() {
 
-    const { register, handleSubmit, resetFields } = useForm();
     const { Option } = Select;
     const dispatch = useDispatch();
     const array = useSelector(state => state.favorites);
 
 
-
     const onReset = () => {
-        // resetFields();
-        setVisibleFavorites(false);
+
     };
 
     const onFinish = (dataForm) => {
-        let user = localStorage.getItem('login');
-        let id = uuidv4();
-        const data = { user, id, ...dataForm };
-        dispatch(favoritesAction(data))
-        setVisibleFavorites(false);
 
     }
 
     return (
-        // <div className={visibleFavorites ? 'modal active' : 'modal'}>
-        <div className={`${styles.modal} ${visibleFavorites ? styles.active : ''}`}>
-            <div className={styles.modal__content}>
+        <div className={visibleFavorites ? 'modal active' : 'modal'}>
+            <div className='modal__content'>
                 <p>Сохранить запрос</p>
 
                 <Form onFinish={onFinish}>
                     <Form.Item label='Запрос' initialValue={valueRequest} name='request'>
-                        <Input id='request' disabled={isDisabled} ></Input>
+                        <Input id='request' ></Input>
                     </Form.Item>
                     <Form.Item label='Название' name='title'>
                         <Input placeholder='Укажите название' id='title' required ></Input>

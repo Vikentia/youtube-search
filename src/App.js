@@ -6,19 +6,21 @@ import NewForm from './pages/NewForm';
 import Main from './pages/Main';
 import store from './redux/store';
 
-import './App.css';
+import styles from './App.module.scss';
 import 'antd/dist/antd.css';
 
 
 function App() {
   const [logIn, setLogIn] = useState(false);
 
+
   return (
     <Provider store={store}>
 
-      <div className="App">
+      <div className={styles.App}>
 
         <Routes>
+
           {logIn
             ? <Route path='*' element={<Main logIn={logIn} setLogIn={setLogIn} />} />
             : <Route path='*' element={<NewForm logIn={logIn} setLogIn={setLogIn} />} />

@@ -1,0 +1,26 @@
+.favorites {
+    &__block {
+        width: 60%;
+        text-align: left;
+    }
+
+    &__item {
+        display: flex;
+    }
+}
+
+.favorite {
+    &__btn {
+        background-color: rgb(238, 172, 172);
+        width: 100%;
+        text-align: start;
+        border: none;
+        background-color: white;
+        display: block;
+    }
+}
+
+.wrap__favorites {
+    text-align: -webkit-center;
+
+}

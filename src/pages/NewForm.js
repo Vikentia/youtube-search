@@ -7,7 +7,7 @@ import axios from "axios";
 import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 
 import logo from '../assets/image/sibdev-logo.png';
-import './NewForm.css';
+import styles from './NewForm.module.scss';
 
 
 
@@ -56,37 +56,37 @@ function NewForm({ logIn, setLogIn }) {
     }
 
     return (
-        <div className="container">
+        <div className={styles.container}>
             <div>
-                <div className="form-logo">
+                <div className={styles.form__logo}>
                     <img src={logo} alt='logo' />
                 </div>
                 <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}     >
-                    <Form className="form">
+                    <Form className={styles.form}>
 
-                        <h3 className="form-title">Вход</h3>
-                        <div className="form-block">
-                            <label className="form-lable" htmlFor="email">Email</label>
+                        <h3 className={styles.form__title}>Вход</h3>
+                        <div className={styles.form__block}>
+                            <label className={styles.form__lable} htmlFor="email">Email</label>
                             <Field
                                 id="email"
                                 name="email"
                                 type="email"
-                                className="form-input"
+                                className={styles.form__input}
                             />
-                            <ErrorMessage component="div" className="error" name="email" />
+                            <ErrorMessage component="div" className={styles.error} name="email" />
                         </div>
 
-                        <div className="form-block">
-                            <label className="form-lable" htmlFor="currency">Пароль</label>
+                        <div className={styles.form__block}>
+                            <label className={styles.form__lable} htmlFor="currency">Пароль</label>
 
                             <Field
                                 id="password"
                                 name="password"
                                 type={visible ? "text" : "password"}
-                                className="form-input"
+                                className={styles.form__input}
                             />
 
-                            <button onClick={(e) => handleClick(e)} className="form-input-btn">
+                            <button onClick={(e) => handleClick(e)} className={styles.form__input_btn}>
                                 {visible
                                     ? <EyeOutlined
                                         style={{
@@ -101,10 +101,11 @@ function NewForm({ logIn, setLogIn }) {
                                 }
                             </button>
 
-                            <ErrorMessage component="div" className="error afterVisible" name="password" />
+                            <ErrorMessage component="div" className={`${styles.error} ${styles.afterVisible}`} name="password" />
+                            {/* <ErrorMessage component="div" className={styles.error} name="password" /> */}
                         </div>
 
-                        <div>   <button className="form-btn" type="submit" >Войти</button>      </div>
+                        <div>   <button className={styles.form__btn} type="submit" >Войти</button>      </div>
 
                     </Form>
                 </Formik>
