@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 import { Input, Space } from 'antd';
 import { HeartTwoTone } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
@@ -15,9 +14,11 @@ import styles from './InputSearch.module.scss';
 
 function InputSearch({ onSearch, valueRequest, resultsVideos }) {
     const { Search } = Input;
-    const [visibleFavorites, setVisibleFavorites] = useState(false);
+    const [visibleFavorites, setVisibleFavorites] = React.useState(false);
     const array = useSelector(state => state.favorites);
     const isDisabled = true;
+
+    console.log('array^ ', array)
 
     return (
         <div>

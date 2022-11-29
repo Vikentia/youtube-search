@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import Header from '../components/Header';
 import InputSearch from "../components/InputSearch";
 import SearchResults from "../components/SearchResults";
@@ -8,13 +7,12 @@ import axios from 'axios';
 
 import { Routes, Route } from 'react-router-dom';
 
-function Main({ logIn, setLogIn }) {
+const Main = ({ logIn, setLogIn }) => {
 
-    const [valueRequest, setValueRequest] = useState('');
-    const [resultsVideos, setResultsVideos] = useState([]);
+    const [valueRequest, setValueRequest] = React.useState('');
+    const [resultsVideos, setResultsVideos] = React.useState([]);
+
     const KEY = 'AIzaSyD3NtVEz2D0_f_1bcilE2YmKaQYO0pUEdk';
-
-
 
     // const onSearch = async (value, maxResults = 12, typeOrder = "relevance") => {
     const onSearch = async (value) => {

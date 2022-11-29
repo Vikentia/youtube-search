@@ -1,20 +1,18 @@
 import React from "react";
-import { useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from "axios";
 
-import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
+import { EyeOutlined, EyeInvisibleOutlined, NodeExpandOutlined } from '@ant-design/icons';
 
 import logo from '../assets/image/sibdev-logo.png';
 import styles from './NewForm.module.scss';
 
 
+const NewForm = ({ logIn, setLogIn }) => {
+    const [visible, setVisible] = React.useState(false);
 
-function NewForm({ logIn, setLogIn }) {
-    const [visible, setVisible] = useState(false);
-
-    function handleClick(e) {
+    const handleClick = (e) => {
         e.preventDefault();
         setVisible(!visible);
     }
@@ -41,7 +39,7 @@ function NewForm({ logIn, setLogIn }) {
         }
         try {
             const response = await axios.post('https://typ-back-end.herokuapp.com/api/login', authData)
-            console.log(response)
+            // console.log(response)
             if (response.data.isAuth) {
                 localStorage.setItem('login', values.email);
                 localStorage.setItem('token', response.data.token);

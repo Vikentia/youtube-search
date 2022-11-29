@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Input, Button, Select } from 'antd';
@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { favoritesAction } from '../redux/actions/favoritesAction';
 
-import './AddFavorites.css';
+
 
 function ChangeFavorites() {
 

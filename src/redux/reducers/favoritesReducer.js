@@ -2,7 +2,7 @@ import { ADD_VALUE, DELETE_VALUE, CHANGE_VALUE } from '../actions/actionTypes';
 
 const initialValue = [];
 
-function favoritesReducer(state = initialValue, action) {
+const favoritesReducer = (state = initialValue, action) => {
     switch (action.type) {
 
         case ADD_VALUE:
